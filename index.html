@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://kit.fontawesome.com/6195055022.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>POMODORO APP</title>
+</head>
+<body>
+    <section class="title" align="center"><h1>Pomodoro Timer</h1>
+    </section>
+    <div class="imgs">
+        <div class="chickwrap">
+        
+        <img src="assets/msg.png" alt="" id="chickmsg">
+        <img src="assets/chick.png" id="chick" alt="">  
+        </div>
+        <img src="assets/ghost.png" alt="" id="ghost">
+    </div>
+    <section class="timer">
+        <div class="app-container">
+            <div class="btntimers" align="center">
+                <button id="pomodoro">Pomodoro</button>
+                <button id="short-break">Short Break</button>
+                <button id="long-break">Long Break</button>
+            </div>
+            <div class="circle">
+                <div class="timer-display">
+                    <p><span id="mins">25</span>:<span id="secs">00</span></p>
+                </div>
+            </div>
+            <div class="controls">
+            
+                <button id="pause" title="pause-timer"><i class="fa-solid fa-pause"></i></button>
+                <button id="start" title="start-timer"><i class="fa-solid fa-play"></i></button>
+                <button id="restart" title="restart-timer"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <button id="openModalBtn">View Stats</button>
+        </div>
+    </section>
+
+
+<div id="statsModal">
+  <div class="modal-content">
+    <span class="close" id="closeModalBtn">&times;</span>
+    <h2>Your Focus Stats</h2>
+    <br>
+    <p>🔥 Streak: <span id="streak-count">0</span> days</p>
+    <p>🎯 Sessions Completed: <span id="session-count">0</span></p>
+    <p>🏆 Level: <span id="level-title">Newbie</span></p>
+  </div>
+</div>
+
+
+<audio id="alert1" src="assets/ding1.mp3" type:"audio/mpeg" preload="auto"></audio>
+<audio id="alert2" src="assets/ding2.mp3" type:"audio/mpeg" preload="auto"></audio>
+<script src="app.js"></script>
+</body>
+
+</html>
