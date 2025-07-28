@@ -12,13 +12,15 @@ const ding2 = document.getElementById('alert2');
 
 function getRandomquote(){
     const quote= [
-        "Look at you go! Just don't go away from your work...",
-        "Yessss taking back control of your life one pomodoro at a time!",
+        "Look at you go! One tomato closer to glory!",
+        "Productivity level: Expert. Future self will thank you!",
         "25 minutes of work today means 25 minutes of free time tomorrow :]",
         "Work is important but health is too, take care of yourself <3",
         "A win is a win, even though you probably spent half of it staring at a wall?",
         "Aye nice hustle. Don't disappear on me now though, okay?",
-        "Focus: 1, Doomscrolling: 0. Keep it up!"
+        "Focus: 1, Doomscrolling: 0. Keep it up!",
+        "The streak lives on... like your will to succeed.",
+        "You crushed it! Now go crush some snacks too.",
     ]
     return quote[Math.floor(Math.random() * quote.length)];
 }
@@ -52,7 +54,7 @@ function updateStats() {
 }
 
 function updateStreak() {
-  const today = new Date().toLocaleDateString(); // e.g., "7/26/2025"
+  const today = new Date().toLocaleDateString(); 
   const lastSession = localStorage.getItem('lastSessionDate');
   let streak = parseInt(localStorage.getItem('streak') || '0');
 
@@ -65,10 +67,10 @@ function updateStreak() {
       if (lastSession === yesterdayStr) {
         streak += 1;
       } else {
-        streak = 1; // Reset streak if gap > 1 day
+        streak = 1; 
       }
     } else {
-      streak = 1; // First time starting streak
+      streak = 1; 
     }
 
     localStorage.setItem('streak', streak);
@@ -109,7 +111,7 @@ function startTimer(){
                 const quote= getRandomquote();
                 minutes.textContent = '';
                 seconds.textContent ='';
-                document.querySelector('.timer-display').innerHTML=`<div class="message"><p>Woohoo! You did it!</p><br><p>${quote}</p></div>`;
+                document.querySelector('.timer-display').innerHTML=`<div class="message"><p>${quote}</p></div>`;
                 }
 
                 else{
@@ -164,18 +166,18 @@ const CloseModalBtn = document.getElementById('closeModalBtn');
 
 
 
-// Show modal when "View Stats" button is clicked
+
 OpenModalBtn.addEventListener('click', () => {
     updateStreak()
     StatsModal.style.display = 'flex';
 });
 
-// Close modal when X is clicked
+
 CloseModalBtn.addEventListener('click', () => {
   StatsModal.style.display = 'none';
 });
 
-// Optional: Click outside modal to close
+
 window.addEventListener('click', (e) => {
   if (e.target === StatsModal) {
     StatsModal.style.display = 'none';
